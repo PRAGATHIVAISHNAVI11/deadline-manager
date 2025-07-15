@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Add New Task</h2>
+    <form method="POST">
+        <label>Task:</label><input type="text" name="name" required><br>
+        <label>Deadline:</label><input type="datetime-local" name="deadline" required><br>
+        <label>Priority:</label>
+        <select name="priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select><br>
+        <input type="submit" value="Add Task">
+    </form>
+    <a href="/" class="btn">← Back</a>
+</body>
+</html>

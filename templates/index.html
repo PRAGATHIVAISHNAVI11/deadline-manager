@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deadline Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📅 Deadline Manager</h1>
+    <a href="/add" class="btn">+ Add New Task</a>
+    <table>
+        <tr><th>Task</th><th>Deadline</th><th>Priority</th><th>Status</th><th>Actions</th></tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task[1] }}</td>
+            <td>{{ task[2] }}</td>
+            <td>{{ task[3] }}</td>
+            <td>{{ task[4] }}</td>
+            <td>
+                {% if task[4] != 'Completed' %}
+                <a href="/complete/{{ task[0] }}">✅ Done</a>
+                {% endif %}
+                <a href="/delete/{{ task[0] }}">🗑️ Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
